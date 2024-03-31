@@ -7,17 +7,17 @@ import './netconfit.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MyApp(),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(411.4, 624.4), //屏幕适配
+        designSize: const Size(430, 932), //屏幕适配
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
@@ -138,9 +138,12 @@ class _RegisterDemoState extends State<RegisterDemo> {
                                   dynamic data = jsonDecode(result);
                                   print(data['data']['userId']);
                                 },
-                                
                               );
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const XinxiDemo()));//name==null?XinxiDemo():Tabs()
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const XinxiDemo())); //name==null?XinxiDemo():Tabs()
                             },
                             child: const Text('登录')),
                       ],
@@ -321,7 +324,10 @@ class _XinxiDemoState extends State<XinxiDemo> {
                       NetConfig.post(lianxi, gexing).then(
                         (value) => print(value),
                       );
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Tabs()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Tabs()));
                     },
                     child: const Text('下一步')),
               ],
