@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.flutterr.app-mergeDebugResources-20:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\21383\\Desktop\\twtchentao\\twt-newapp2\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "from": {
+                        "startLines": "3,16",
+                        "startColumns": "4,4",
+                        "startOffsets": "175,965",
+                        "endLines": "9,20",
+                        "endColumns": "12,12",
+                        "endOffsets": "616,1265"
+                    },
+                    "to": {
+                        "startLines": "2,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,368",
+                        "endLines": "7,12",
+                        "endColumns": "12,12",
+                        "endOffsets": "363,664"
+                    }
+                }
+            ]
+        }
+    ]
+}

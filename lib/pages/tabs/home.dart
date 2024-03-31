@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import './search.dart';
 
@@ -13,7 +14,10 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+        getPages: [
+          GetPage(name: "/searchpage", page: () => const SearchScreen())
+        ],
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             appBar: AppBar(
@@ -35,8 +39,8 @@ class _HomepageState extends State<Homepage> {
               width: double.infinity,
               height: double.infinity,
               child: Stack(
-                children: [
-                  Container(
+                children: [Positioned(left: 40.w,right: 40.w,
+                  child:Container(
                     height: 34.h,
                     width: 350.w,
                     decoration: BoxDecoration(
@@ -58,63 +62,25 @@ class _HomepageState extends State<Homepage> {
                         ],
                       ),
                       onTap: () {
-                        const SearchScreen();
+                        Get.toNamed("/searchpage");
                       },
                     ),
-                  ),
-                  Positioned.fill(
+                  ),),
+                  
+                  Positioned(
+                      top: 100.h,
                       child: Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                          const Color.fromARGB(255, 172, 214, 247)
-                              .withOpacity(0.3),
-                          const Color.fromRGBO(229, 239, 244, 1)
-                              .withOpacity(0.3),
-                        ])),
-                  )),
-                  ListView(
-                    children: [
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                      Text("待添加..."),
-                    ],
-                  )
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                              const Color.fromARGB(255, 172, 214, 247)
+                                  .withOpacity(0.3),
+                              const Color.fromRGBO(229, 239, 244, 1)
+                                  .withOpacity(0.3),
+                            ])),
+                      )),
                 ],
               ),
             )));
